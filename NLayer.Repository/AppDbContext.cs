@@ -13,17 +13,22 @@ namespace NLayer.Repository
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-
+            Odemeler = Set<Odeme>();
         }
 
         public DbSet<Odeme> Odemeler { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //OnModelCreating metodu, model oluşturulurken gerekli yapılandırmaları yapmak için kullanılır. Bu yapılandırmalar, veritabanı tabloları ve ilişkilerinin nasıl oluşturulacağı ve örnek verilerin nasıl ekleneceği gibi işlemleri belirler. Bu sayede Entity Framework Core, uygulama varlık sınıflarının veritabanına nasıl yansıtılacağını bilir ve uygulama, doğru yapılandırmalarla veritabanı işlemlerini gerçekleştirebilir.
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+           
+
+
             base.OnModelCreating(modelBuilder);
         }
     }
-
-        
 }
+

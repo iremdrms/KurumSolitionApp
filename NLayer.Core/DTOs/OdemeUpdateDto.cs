@@ -8,7 +8,8 @@ namespace NLayer.Core.DTOs
 {
     public class OdemeUpdateDto
     {
-        public int OdemeNo { get; set; } //key
+        public int Id { get; set; }
+        
         public string TcKimlikNo { get; set; }
         public string MusteriAd { get; set; }
         public string MusteriSoyad { get; set; }

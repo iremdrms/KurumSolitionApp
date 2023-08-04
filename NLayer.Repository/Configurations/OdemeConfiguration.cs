@@ -17,7 +17,6 @@ namespace NLayer.Repository.Configurations
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();
-            builder.Property(e => e.OdemeNo).HasColumnName("ODEMENO").IsRequired();
             builder.Property(e => e.TcKimlikNo).HasColumnName("TCKIMLIKNO").IsRequired().HasMaxLength(11);
             builder.Property(e => e.MusteriAd).HasColumnName("MUSTERIAD").IsRequired().HasMaxLength(50);
             builder.Property(e => e.MusteriSoyad).HasColumnName("MUSTERISOYAD").IsRequired().HasMaxLength(50);

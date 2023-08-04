@@ -12,7 +12,7 @@ using NLayer.Repository;
 namespace NLayer.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230803133117_initial")]
+    [Migration("20230804122521_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,10 +56,6 @@ namespace NLayer.Repository.Migrations
                         .HasColumnType("int")
                         .HasColumnName("ODEME_KD");
 
-                    b.Property<int>("OdemeNo")
-                        .HasColumnType("int")
-                        .HasColumnName("ODEMENO");
-
                     b.Property<DateTime>("OdemeTarihi")
                         .HasColumnType("date")
                         .HasColumnName("ODEME_TR");
@@ -85,65 +81,60 @@ namespace NLayer.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 8, 3, 16, 31, 16, 865, DateTimeKind.Local).AddTicks(675),
+                            CreatedDate = new DateTime(2023, 8, 4, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8265),
                             MusteriAd = "Ayşe",
                             MusteriSoyad = "Yılmaz",
                             OdemeAciklama = "Ürün satışı",
                             OdemeDurumu = 0,
-                            OdemeNo = 0,
-                            OdemeTarihi = new DateTime(2023, 7, 19, 16, 31, 16, 865, DateTimeKind.Local).AddTicks(665),
+                            OdemeTarihi = new DateTime(2023, 7, 20, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8246),
                             OdenecekTutar = 500.00m,
                             TcKimlikNo = "12345678901"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 8, 3, 16, 31, 16, 865, DateTimeKind.Local).AddTicks(678),
+                            CreatedDate = new DateTime(2023, 8, 4, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8267),
                             MusteriAd = "Mehmet",
                             MusteriSoyad = "Kaya",
                             OdemeAciklama = "Hizmet ödemesi",
-                            OdemeDurumu = 1,
-                            OdemeNo = 0,
-                            OdemeTarihi = new DateTime(2023, 7, 4, 16, 31, 16, 865, DateTimeKind.Local).AddTicks(677),
+                            OdemeDurumu = 0,
+                            OdemeTarihi = new DateTime(2023, 7, 5, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8267),
                             OdenecekTutar = 750.50m,
                             TcKimlikNo = "23456789012"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 8, 3, 16, 31, 16, 865, DateTimeKind.Local).AddTicks(680),
+                            CreatedDate = new DateTime(2023, 8, 4, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8269),
                             MusteriAd = "Elif",
                             MusteriSoyad = "Demir",
                             OdemeAciklama = "Fatura ödemesi",
                             OdemeDurumu = 0,
-                            OdemeNo = 0,
-                            OdemeTarihi = new DateTime(2023, 7, 27, 16, 31, 16, 865, DateTimeKind.Local).AddTicks(679),
+                            OdemeTarihi = new DateTime(2023, 7, 28, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8269),
                             OdenecekTutar = 300.00m,
                             TcKimlikNo = "34567890123"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 8, 3, 16, 31, 16, 865, DateTimeKind.Local).AddTicks(682),
+                            CreatedDate = new DateTime(2023, 8, 4, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8271),
                             MusteriAd = "Ahmet",
                             MusteriSoyad = "Yıldız",
                             OdemeAciklama = "Kira ödemesi",
-                            OdemeDurumu = 2,
-                            OdemeNo = 0,
-                            OdemeTarihi = new DateTime(2023, 6, 4, 16, 31, 16, 865, DateTimeKind.Local).AddTicks(681),
+                            OdemeDurumu = 0,
+                            OdemeTarihi = new DateTime(2023, 6, 5, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8271),
                             OdenecekTutar = 1200.75m,
                             TcKimlikNo = "45678901234"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 8, 3, 16, 31, 16, 865, DateTimeKind.Local).AddTicks(684),
+                            CreatedDate = new DateTime(2023, 8, 4, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8273),
                             MusteriAd = "Zeynep",
                             MusteriSoyad = "Akgün",
                             OdemeAciklama = "Alışveriş ödemesi",
-                            OdemeDurumu = 1,
-                            OdemeNo = 0,
-                            OdemeTarihi = new DateTime(2023, 7, 12, 16, 31, 16, 865, DateTimeKind.Local).AddTicks(683),
+                            OdemeDurumu = 0,
+                            OdemeTarihi = new DateTime(2023, 7, 13, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8273),
                             OdenecekTutar = 250.25m,
                             TcKimlikNo = "56789012345"
                         });

@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NLayer.Core;
 using NLayer.Core.DTOs;
+using NLayer.Core.Enums;
 using NLayer.Core.Service;
 
 namespace NLayer.API.Controllers
@@ -21,9 +23,9 @@ namespace NLayer.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> All(string tckn)
         {
-            var odemeler = await _service.GetAllAsync();
+            var odemeler = _service.Where(x => x.TcKimlikNo.Equals(tckn) && x.OdemeDurumu == OdemeDurumuEnum.Odenebilir).ToList();
 
             var odemelerDtos = _mapper.Map<List<OdemeDto>>(odemeler).ToList();
             //return Ok( CustomResponseDto<List<ProductDto>>.Success(200, productsDtos));
@@ -40,19 +42,39 @@ namespace NLayer.API.Controllers
             return CreateActionResult(CustomResponseDto<OdemeDto>.Success(200, odemelerDtos));
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Save(OdemeDto odemeDto)
+        [HttpPost("OdemeYap")]
+        public async Task<IActionResult> OdemeYap(string tckn, int odemeNo)
         {
-            var odeme = await _service.AddAsync(_mapper.Map<Odeme>(odemeDto));
+            var odeme = await _service.Where(x => x.TcKimlikNo.Equals(tckn) && x.Id == odemeNo).SingleOrDefaultAsync();
 
-            var odemelerDtos = _mapper.Map<OdemeDto>(odeme);
-            return CreateActionResult(CustomResponseDto<OdemeDto>.Success(201, odemelerDtos));
+            if (odeme == null)
+            {
+                return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(404, "Ödeme bulunamadı."));
+            }
+
+            if (odeme.OdemeDurumu != OdemeDurumuEnum.Odenebilir)
+            {
+                return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Bu ödeme zaten ödenmiş veya ödeme tarihi gelmemiş."));
+            }
+
+            // Ödeme tarihi kontrolü
+            if (odeme.OdemeTarihi > DateTime.Now)
+            {
+                return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Ödeme tarihi henüz gelmemiştir."));
+            }
+
+            odeme.OdemeDurumu = OdemeDurumuEnum.Odendi;
+
+            await _service.UpdateAsync(odeme);
+
+            return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
 
+
         [HttpPut]
-        public async Task<IActionResult> Update(OdemeUpdateDto productDto)
+        public async Task<IActionResult> Update(OdemeUpdateDto odemeDto)
         {
-            await _service.UpdateAsync(_mapper.Map<Odeme>(productDto));
+            await _service.UpdateAsync(_mapper.Map<Odeme>(odemeDto));
 
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
