@@ -43,7 +43,7 @@ namespace NLayer.Repository.Seeds
                     MusteriAd = "Elif",
                     MusteriSoyad = "Demir",
                     OdenecekTutar = 300.00m,
-                    OdemeTarihi = DateTime.Now.AddDays(-7),
+                    OdemeTarihi = DateTime.Now.AddDays(+7),
                     OdemeAciklama = "Fatura ödemesi",
                     CreatedDate = DateTime.Now,
                 },
@@ -65,7 +65,7 @@ namespace NLayer.Repository.Seeds
                     MusteriAd = "Zeynep",
                     MusteriSoyad = "Akgün",
                     OdenecekTutar = 250.25m,
-                    OdemeTarihi = DateTime.Now.AddDays(-22),
+                    OdemeTarihi = DateTime.Now.AddDays(+22),
                     OdemeAciklama = "Alışveriş ödemesi",
                     CreatedDate = DateTime.Now,
                 }

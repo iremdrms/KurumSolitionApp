@@ -35,11 +35,11 @@ namespace NLayer.Repository.Migrations
                 columns: new[] { "Id", "CreatedDate", "MUSTERIAD", "MUSTERISOYAD", "ODEME_ACK", "ODEME_KD", "ODEME_TR", "ODENECEK_TTR", "TCKIMLIKNO", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 8, 4, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8265), "Ayşe", "Yılmaz", "Ürün satışı", 0, new DateTime(2023, 7, 20, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8246), 500.00m, "12345678901", null },
-                    { 2, new DateTime(2023, 8, 4, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8267), "Mehmet", "Kaya", "Hizmet ödemesi", 0, new DateTime(2023, 7, 5, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8267), 750.50m, "23456789012", null },
-                    { 3, new DateTime(2023, 8, 4, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8269), "Elif", "Demir", "Fatura ödemesi", 0, new DateTime(2023, 7, 28, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8269), 300.00m, "34567890123", null },
-                    { 4, new DateTime(2023, 8, 4, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8271), "Ahmet", "Yıldız", "Kira ödemesi", 0, new DateTime(2023, 6, 5, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8271), 1200.75m, "45678901234", null },
-                    { 5, new DateTime(2023, 8, 4, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8273), "Zeynep", "Akgün", "Alışveriş ödemesi", 0, new DateTime(2023, 7, 13, 15, 25, 21, 665, DateTimeKind.Local).AddTicks(8273), 250.25m, "56789012345", null }
+                    { 1, new DateTime(2023, 8, 4, 16, 2, 43, 419, DateTimeKind.Local).AddTicks(3201), "Ayşe", "Yılmaz", "Ürün satışı", 0, new DateTime(2023, 7, 20, 16, 2, 43, 419, DateTimeKind.Local).AddTicks(3178), 500.00m, "12345678901", null },
+                    { 2, new DateTime(2023, 8, 4, 16, 2, 43, 419, DateTimeKind.Local).AddTicks(3206), "Mehmet", "Kaya", "Hizmet ödemesi", 0, new DateTime(2023, 7, 5, 16, 2, 43, 419, DateTimeKind.Local).AddTicks(3204), 750.50m, "23456789012", null },
+                    { 3, new DateTime(2023, 8, 4, 16, 2, 43, 419, DateTimeKind.Local).AddTicks(3210), "Elif", "Demir", "Fatura ödemesi", 0, new DateTime(2023, 8, 11, 16, 2, 43, 419, DateTimeKind.Local).AddTicks(3209), 300.00m, "34567890123", null },
+                    { 4, new DateTime(2023, 8, 4, 16, 2, 43, 419, DateTimeKind.Local).AddTicks(3214), "Ahmet", "Yıldız", "Kira ödemesi", 0, new DateTime(2023, 6, 5, 16, 2, 43, 419, DateTimeKind.Local).AddTicks(3213), 1200.75m, "45678901234", null },
+                    { 5, new DateTime(2023, 8, 4, 16, 2, 43, 419, DateTimeKind.Local).AddTicks(3218), "Zeynep", "Akgün", "Alışveriş ödemesi", 0, new DateTime(2023, 8, 26, 16, 2, 43, 419, DateTimeKind.Local).AddTicks(3217), 250.25m, "56789012345", null }
                 });
         }
 
