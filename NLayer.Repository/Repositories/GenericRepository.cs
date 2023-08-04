@@ -41,7 +41,7 @@ namespace NLayer.Repository.Repositories
 
         public void Remove(T entity)
         {
-            _dbSet.Remove(entity);
+           _dbSet.Remove(entity);
         }
 
         public void RemoveRange(IEnumerable<T> entities)
