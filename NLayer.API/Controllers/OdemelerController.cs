@@ -72,7 +72,9 @@ namespace NLayer.API.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> Update(OdemeUpdateDto odemeDto)
+        
+        
+        public async Task<IActionResult> Update([FromBody] OdemeUpdateDto odemeDto)
         {
             await _service.UpdateAsync(_mapper.Map<Odeme>(odemeDto));
 
