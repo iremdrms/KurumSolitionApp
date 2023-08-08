@@ -43,7 +43,7 @@ namespace NLayer.API.Controllers
         }
 
         [HttpPost("OdemeYap")]
-        public async Task<IActionResult> OdemeYap(string tckn, int odemeNo)
+        public async Task<IActionResult> OdemeYap([FromBody] string tckn, int odemeNo)
         {
             var odeme = await _service.Where(x => x.TcKimlikNo.Equals(tckn) && x.Id == odemeNo).SingleOrDefaultAsync();
 
